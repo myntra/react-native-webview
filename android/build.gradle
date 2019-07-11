@@ -35,12 +35,17 @@ android {
     versionName "1.0"
   }
   buildTypes {
-    release {
-      minifyEnabled false
-    }
+     debug {}
+     qa {}
+     fox {}
+     release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
   }
   lintOptions {
     disable 'GradleCompatible'
+    abortOnError false
   }
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
@@ -123,6 +128,6 @@ def kotlin_version = getExtOrDefault('kotlinVersion')
 
 dependencies {
   //noinspection GradleDynamicVersion
-  api 'com.facebook.react:react-native:+'
+  api project(':react-native')
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

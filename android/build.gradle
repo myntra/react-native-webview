@@ -67,7 +67,7 @@ repositories {
   } else {
     defaultDir = new File(
       projectDir,
-      '/../../../node_modules/react-native/android'
+      '/../../../node_modules/react-native/ReactAndroid'
     )
   }
 
@@ -93,7 +93,7 @@ repositories {
 
       def androidPrebuiltBinaryDir = new File(
         parentDir,
-        'node_modules/react-native/android'
+        'node_modules/react-native/ReactAndroid'
       )
 
       if (androidPrebuiltBinaryDir.exists()) {
